@@ -8,11 +8,11 @@ SELECT numero_fattura FROM public.fatture where iva = 20 (id delle fatture con i
 SELECT COUNT(numero_fattura) FROM public.fatture where iva = 20 (numero totale di fatture con iva al 20%)
 
 # Riportare il numero di fatture e la somma dei relativi importi divisi per anno di fatturazione.
-SELECT data_fattura, 
+SELECT DATE_PART('year', data_fattura)
 COUNT(numero_fattura) AS totale_fatture, 
 SUM(importo) AS somma_importo
 FROM public.fatture
-GROUP BY data_fattura
+GROUP BY DATE_PART('year', data_fattura)
 
 # Estrarre i prodotti attivati nel 2017 e che sono in produzione oppure in commercio.
 SELECT id_prodotto
