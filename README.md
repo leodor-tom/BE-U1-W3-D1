@@ -1,14 +1,14 @@
 # BE-U1-W3-D1
 
 # Estrarre il nome e cognome dei clienti nati nel 1982.
-SElECT nome, cognome FROM public.clienti WHERE data_nascita = 1982
+SELECT nome, cognome FROM public.clienti WHERE data_nascita = 1982
 
 # Estarre il numero di fatture con iva al 20%.
-SElECT numero_fattura FROM public.fatture where iva = 20 (id delle fatture con iva al 20%)
-SElECT COUNT(numero_fattura) FROM public.fatture where iva = 20 (numero totale di fatture con iva al 20%)
+SELECT numero_fattura FROM public.fatture where iva = 20 (id delle fatture con iva al 20%)
+SELECT COUNT(numero_fattura) FROM public.fatture where iva = 20 (numero totale di fatture con iva al 20%)
 
 # Riportare il numero di fatture e la somma dei relativi importi divisi per anno di fatturazione.
-SElECT data_fattura, 
+SELECT data_fattura, 
 COUNT(numero_fattura) AS totale_fatture, 
 SUM(importo) AS somma_importo
 FROM public.fatture
